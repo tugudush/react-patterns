@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { useState, createContext, useContext } from "react";
 
 const AccordionContext = createContext();
 
@@ -29,7 +29,7 @@ export default function Accordion({ children, className }) {
   };
 
   return (
-    <AccordionContext.Provider value={{ openItemId, openItem, closeItem }}>
+    <AccordionContext.Provider value={contextValue}>
       <ul className={className}>{children}</ul>
     </AccordionContext.Provider>
   );
